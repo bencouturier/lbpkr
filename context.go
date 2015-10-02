@@ -1589,7 +1589,7 @@ func (ctx *Context) installPackages(pkgs []Package, rpmdir string) error {
 	// but finding the correct order is very time consuming (at least with a naive algorithm)
 	// finding a way to extract that order from `rpm` would be great.
 
-	installCmd := []string{"-ivh", "--oldpackage"}
+	installCmd := []string{"-Uvh", "--oldpackage"}
 	updateCmd := []string{"-Uvh"}
 	add := func(v string) {
 		installCmd = append(installCmd, v)
